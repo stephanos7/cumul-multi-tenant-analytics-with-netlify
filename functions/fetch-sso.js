@@ -6,7 +6,7 @@ export const handler = requireAuth(async (event, context) => {
   const { claims, token } = context.identityContext;
   let ssoResponse;
   const userRes = await fetch(
-      `https://${process.env.AUTH0_DOMAIN}/api/v2/users/${claims.sub}`,
+      `https://${process.env.REACT_APP_AUTH0_DOMAIN}/api/v2/users/${claims.sub}`,
       {
         headers: new fetch.Headers({
           Authorization: `Bearer ${token}`,

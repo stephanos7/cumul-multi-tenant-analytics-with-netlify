@@ -59537,7 +59537,7 @@ var { requireAuth: requireAuth2 } = (init_auth(), __toCommonJS(auth_exports));
 var handler = requireAuth2(async (event, context) => {
   const { claims, token } = context.identityContext;
   let ssoResponse;
-  const userRes = await fetch(`https://${process.env.AUTH0_DOMAIN}/api/v2/users/${claims.sub}`, {
+  const userRes = await fetch(`https://${process.env.REACT_APP_AUTH0_DOMAIN}/api/v2/users/${claims.sub}`, {
     headers: new fetch.Headers({
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json"
