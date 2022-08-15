@@ -33,13 +33,13 @@ export const handler = requireAuth(async (event, context) => {
         username: user.user_id,
         name: user.name,
         email: user.email,
-        suborganization: claims.cumulio.brand,
+        suborganization: claims.brand,
         role: "viewer",
         metadata: {
-          brand: [claims.cumulio.brand],
+          brand: [claims.brand],
         },
         theme: {
-          id: claims.preferences.theme,
+          id: claims.theme,
           type: "foo",
           itemsBackground: "#fff",
           colors: ["#fff"],
