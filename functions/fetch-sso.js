@@ -6,16 +6,16 @@ export const handler = requireAuth(async (event, context) => {
   const { claims, token } = context.identityContext;
   let ssoResponse;
   const userRes = await fetch(
-      `https://${process.env.REACT_APP_AUTH0_DOMAIN}/api/v2/users/${claims.sub}`,
-      {
-        headers: new fetch.Headers({
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        }),
-      }
-    );
-    
-  const user = await userRes.json()
+    `https://${process.env.REACT_APP_AUTH0_DOMAIN}/api/v2/users/${claims.sub}`,
+    {
+      headers: new fetch.Headers({
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      }),
+    }
+  );
+
+  const user = await userRes.json();
 
   const client = new Cumulio({
     api_key: process.env.CUMUL_KEY,
@@ -33,10 +33,10 @@ export const handler = requireAuth(async (event, context) => {
         username: user.user_id,
         name: user.name,
         email: user.email,
-        suborganization: claims.data.brand,
+        suborganization: claims.cumulio.brand,
         role: "viewer",
         metadata: {
-          brand: [claims.data.brand],
+          brand: [claims.cumulio.brand],
         },
         theme: {
           id: claims.preferences.theme,
