@@ -14,7 +14,7 @@
   CUMUL_KEY="Add your cumul key"
   CUMUL_TOKEN="Add your cumul token"
   CUMUL_INTEGRATION_ID="Add your integration id"
-  CUMUL_DASHBOARD_ID="Add your dashboard id"
+  REACT_APP_CUMUL_DASHBOARD_ID="Add your dashboard id"
   REACT_APP_AUTH0_DOMAIN="Add your auth0 domain"
   REACT_APP_AUTH0_CLIENT_ID="Add your auth0 client id "
   REACT_APP_AUTH0_AUDIENCE="Add your audience"

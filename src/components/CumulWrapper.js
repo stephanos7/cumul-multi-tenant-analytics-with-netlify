@@ -8,7 +8,7 @@ export const CumulioWrapper = ({ dashboardKey, dashboardToken }) => {
       ref={ref}
       authKey={dashboardKey}
       authToken={dashboardToken}
-      dashboardId={`${process.env.CUMUL_DASHBOARD_ID}`}
+      dashboardId={`${process.env.REACT_APP_CUMUL_DASHBOARD_ID}`}
       switchScreenModeOnResize={false}
       loaderSpinnerColor="rgb(0, 81, 126)"
       loaderSpinnerBackground="rgb(236 248 255)"
