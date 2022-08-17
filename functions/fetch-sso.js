@@ -26,7 +26,7 @@ export const handler = requireAuth(async (event, context) => {
   try {
     const generateSSOcredentials = async () => {
       return await client.create("authorization", {
-        integration_id: "da65ca62-fd24-4a54-8a00-6434dea90d7b",
+        integration_id: `${process.env.CUMUL_INTEGRATION_ID}`,
         type: "sso",
         expiry: "24 hours",
         inactivity_interval: "10 minutes",

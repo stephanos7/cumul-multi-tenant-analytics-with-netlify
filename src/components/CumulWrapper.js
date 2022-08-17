@@ -1,4 +1,4 @@
-import { CumulioDashboardComponent, CumulioDashboard } from '@cumul.io/react-cumulio-dashboard';
+import { CumulioDashboardComponent } from "@cumul.io/react-cumulio-dashboard";
 import { useRef } from "react";
 
 export const CumulioWrapper = ({ dashboardKey, dashboardToken }) => {
@@ -8,7 +8,7 @@ export const CumulioWrapper = ({ dashboardKey, dashboardToken }) => {
       ref={ref}
       authKey={dashboardKey}
       authToken={dashboardToken}
-      dashboardId="5e909dd4-83d1-4e9f-9683-09f84f3afe01"
+      dashboardId={`${process.env.CUMUL_DASHBOARD_ID}`}
       switchScreenModeOnResize={false}
       loaderSpinnerColor="rgb(0, 81, 126)"
       loaderSpinnerBackground="rgb(236 248 255)"
