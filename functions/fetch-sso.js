@@ -33,17 +33,11 @@ export const handler = requireAuth(async (event, context) => {
         username: user.user_id,
         name: user.name,
         email: user.email,
-        suborganization: claims.brand,
+        suborganization: claims.cumulio.brand,
         role: "viewer",
         metadata: {
-          brand: [claims.brand],
-        },
-        theme: {
-          id: claims.theme,
-          type: "foo",
-          itemsBackground: "#fff",
-          colors: ["#fff"],
-        },
+          brand: [claims.cumulio.brand],
+        }
       });
     };
     ssoResponse = await generateSSOcredentials();
